@@ -156,95 +156,172 @@ const CATEGORIES = [
   },
 ]
 
-// ── 1. Hero Section (Matches Reference Image — OMASTRA Style) ─────
+// ── 1. Hero Section (Premium — Matches Reference Image) ─────────────
 function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden border-b border-gray-200/60"
-      style={{ backgroundColor: '#F1F2F2' }}
+      className="relative overflow-hidden border-b border-gray-100"
+      style={{ backgroundColor: '#FAFAFA' }}
     >
-      {/* Subtle diagonal ambient overlay */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-black/[0.03] z-0" />
+      {/* ── Subtle technical grid overlay ─────────────────────────── */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-[0.028]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 min-h-[580px] lg:min-h-[660px] xl:min-h-[700px] flex items-center py-16 lg:py-0 z-10">
+      {/* ── Oversized "OMASTRA" typographic watermark ─────────────── */}
+      <div
+        className="pointer-events-none select-none absolute z-0 hidden lg:flex items-center"
+        style={{
+          right: '-2%',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          fontSize: 'clamp(8rem, 18vw, 18rem)',
+          fontFamily: "'Space Grotesk', 'Manrope', sans-serif",
+          fontWeight: 900,
+          letterSpacing: '-0.04em',
+          color: 'transparent',
+          WebkitTextStroke: '1.5px rgba(0,0,0,0.055)',
+          lineHeight: 1,
+          whiteSpace: 'nowrap',
+          userSelect: 'none',
+        }}
+        aria-hidden="true"
+      >
+        OMASTRA
+      </div>
 
-        {/* ── Left Column — Headline, Copy & CTA ── */}
-        <div className="w-full lg:max-w-lg xl:max-w-xl z-20 pt-4 lg:pt-0">
+      {/* ── Main layout grid ──────────────────────────────────────── */}
+      <div className="relative max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center min-h-[88vh] lg:min-h-[82vh] xl:min-h-[78vh] gap-0">
 
-          {/* Eyebrow label — "DISCIPLINE BUILDS FREEDOM" with dash */}
-          <div className="animate-slide-up" style={{ animationDelay: '0ms' }}>
-            <div className="flex items-center gap-2.5 mb-5">
-              <span className="w-6 h-[1.5px] bg-[#8C93A0] animate-line-grow" style={{ animationDelay: '100ms' }} />
-              <span className="text-[#8C93A0] text-xs font-semibold tracking-[0.25em] uppercase">
-                DISCIPLINE BUILDS FREEDOM
+          {/* ── LEFT COLUMN ─────────────────────────────────────────── */}
+          <div className="flex flex-col justify-center py-16 lg:py-0 max-w-[520px]">
+
+            {/* Eyebrow */}
+            <div className="animate-slide-up mb-5" style={{ animationDelay: '0ms' }}>
+              <span className="text-[#8C93A0] text-[11px] font-bold tracking-[0.28em] uppercase">
+                SPORTS NUTRITION
               </span>
             </div>
-          </div>
 
-          {/* Giant editorial headline */}
-          <h1
-            className="animate-slide-up font-display font-black text-black tracking-tight uppercase leading-[0.88] mb-6 text-[clamp(2.75rem,5.5vw,5.25rem)]"
-            style={{ animationDelay: '80ms' }}
-          >
-            BUILT FOR<br />
-            THE WORK<br />
-            NOBODY<br />
-            <span className="text-[#9AA1AD]">SEES.</span>
-          </h1>
-
-          {/* Supporting copy */}
-          <p
-            className="animate-slide-up text-[#626875] text-base sm:text-lg leading-relaxed max-w-md mb-8 font-normal"
-            style={{ animationDelay: '160ms' }}
-          >
-            Nutrition for the days you show up, the reps you finish, and the goals you refuse to abandon.
-          </p>
-
-          {/* CTA Button */}
-          <div
-            className="animate-slide-up"
-            style={{ animationDelay: '240ms' }}
-          >
-            <Link
-              to="/shop"
-              className="inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-[#0A0A0A] text-white font-bold text-sm tracking-wide rounded-xl hover:bg-black transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-md shadow-black/10 group"
+            {/* Giant editorial headline */}
+            <h1
+              className="animate-slide-up font-display font-black uppercase leading-[0.9] tracking-tight text-black mb-7"
+              style={{
+                animationDelay: '60ms',
+                fontSize: 'clamp(3.25rem, 7vw, 5.75rem)',
+              }}
             >
-              <span>Explore Products</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+              BUILT FOR<br />
+              YOUR NEXT<br />
+              <span style={{ color: '#9AA1AD' }}>LEVEL.</span>
+            </h1>
+
+            {/* Body copy */}
+            <div className="animate-slide-up mb-8" style={{ animationDelay: '140ms' }}>
+              <p className="text-[#525965] text-[15px] leading-relaxed max-w-[360px]">
+                Fuel your training. Stay consistent. Keep progressing.
+                <br />
+                <span className="text-[#7C8490] text-[13px] mt-1 block">
+                  Transparent, high-quality sports nutrition engineered for
+                  athletes and everyday performers across India.
+                </span>
+              </p>
+            </div>
+
+            {/* CTA Buttons */}
+            <div
+              className="animate-slide-up flex flex-wrap gap-3 items-center"
+              style={{ animationDelay: '220ms' }}
+            >
+              <Link
+                to="/shop"
+                className="inline-flex items-center gap-3 px-7 py-3.5 bg-[#0A0A0A] text-white font-bold text-[13px] tracking-[0.08em] uppercase rounded-xl hover:bg-black transition-all duration-200 hover:-translate-y-0.5 shadow-sm group"
+              >
+                SHOP SUPPLEMENTS
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                to="/shop"
+                className="inline-flex items-center gap-2 px-5 py-3.5 text-black font-semibold text-[13px] tracking-[0.06em] uppercase hover:text-gray-500 transition-colors"
+              >
+                EXPLORE THE COLLECTION
+              </Link>
+            </div>
+
+          </div>
+
+          {/* ── RIGHT COLUMN — Product composition ─────────────────── */}
+          <div className="relative flex items-end justify-center lg:justify-end pb-0 pt-10 lg:pt-0 lg:pl-8">
+
+            {/* Product image */}
+            <div
+              className="relative animate-slide-in-right"
+              style={{ animationDelay: '100ms' }}
+            >
+              <img
+                src="/products/hero-whey-composition.png"
+                alt="OMASTRA Whey Pro — Premium Protein Matrix with stone prop and scoop"
+                className="relative z-10 w-[340px] sm:w-[420px] md:w-[480px] lg:w-[540px] xl:w-[600px] object-contain object-bottom drop-shadow-[0_32px_48px_rgba(0,0,0,0.09)]"
+                style={{ maxHeight: '78vh' }}
+                fetchPriority="high"
+                draggable="false"
+              />
+
+              {/* ── Product callout annotation (top-right of tub) ── */}
+              <div
+                className="absolute hidden sm:flex flex-col items-start z-20 animate-fade-in"
+                style={{
+                  top: '12%',
+                  right: '-10px',
+                  animationDelay: '500ms',
+                }}
+              >
+                <div className="flex items-center gap-1.5">
+                  <div className="w-[52px] h-[0.5px] bg-[#888] opacity-70" />
+                  <div className="flex flex-col leading-none">
+                    <span className="text-[9.5px] font-bold tracking-[0.18em] uppercase text-[#333]">
+                      PREMIUM WHEY PROTEIN
+                    </span>
+                    <span className="text-[8px] text-[#888] tracking-[0.12em] font-medium mt-0.5">
+                      25g PROTEIN PER SERVING
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── Right-side benefit stack ───────────────────────── */}
+            <div
+              className="hidden xl:flex flex-col gap-4 ml-8 mb-12 animate-fade-in"
+              style={{ animationDelay: '400ms' }}
+            >
+              {[
+                { icon: '⚡', label: 'HIGH PROTEIN' },
+                { icon: '◎', label: 'LOW SUGAR' },
+                { icon: '✦', label: 'EASY MIXABILITY' },
+              ].map(({ icon, label }) => (
+                <div key={label} className="flex items-center gap-2.5">
+                  <span className="text-[#9AA1AD] text-sm leading-none">{icon}</span>
+                  <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-[#6B7280]">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
-
-        {/* ── Center-Right — Athlete Photo ── */}
-        <div
-          className="mt-12 lg:mt-0 lg:absolute lg:bottom-0 lg:left-[52%] xl:left-[51%] lg:-translate-x-1/2 z-10 flex items-end justify-center pointer-events-none select-none animate-slide-in-right"
-          style={{ animationDelay: '100ms' }}
-        >
-          <img
-            src="/about/athlete-portrait.png"
-            alt="OMASTRA athlete — Built for the work nobody sees"
-            className="w-auto h-[440px] sm:h-[500px] md:h-[560px] lg:h-[620px] xl:h-[680px] max-w-none object-contain object-bottom filter contrast-105 drop-shadow-[0_20px_35px_rgba(0,0,0,0.06)]"
-            fetchPriority="high"
-          />
-        </div>
-
-        {/* ── Far Right — Vertical Motivational Stack ── */}
-        <div
-          className="hidden lg:flex flex-col items-start gap-1 absolute right-6 sm:right-10 lg:right-14 bottom-14 xl:bottom-16 z-20 text-[11px] font-semibold tracking-[0.25em] text-[#8C93A0] uppercase select-none animate-fade-in"
-          style={{ animationDelay: '350ms' }}
-        >
-          <span>SAME</span>
-          <span>PERSON</span>
-          <span>BUT A</span>
-          <span>STRONGER</span>
-          <span>MINDSET</span>
-          <span className="w-6 h-[1.5px] bg-[#8C93A0] mt-1.5" />
-        </div>
-
       </div>
     </section>
   )
 }
+
 
 // ── 2. Shop by Category Section ────────────────────────────────────
 function CategorySection() {
