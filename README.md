@@ -1,296 +1,341 @@
-# OMASTRA — Sports Nutrition E-Commerce Platform
+# ⚡ OMASTRA — Sports Nutrition E-Commerce Platform
 
-> **POWER WITHIN.** — Everyday nutrition. Built for your next level.
+<div align="center">
 
-A modern, full-stack Indian sports-nutrition e-commerce platform built with React + Vite (frontend) and Node.js + Express + MongoDB (backend).
+[![React](https://img.shields.io/badge/React-18.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.18-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Razorpay](https://img.shields.io/badge/Razorpay-Gateway-0C2340?style=for-the-badge&logo=razorpay&logoColor=blue)](https://razorpay.com/)
 
----
+**POWER WITHIN.** — Everyday nutrition. Built for your next level.
 
-## Table of Contents
+*A modern, full-stack Direct-to-Consumer (D2C) sports nutrition e-commerce platform built for high performance, smooth animations, and conversion-optimized purchasing.*
 
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [Running in Development](#running-in-development)
-- [Seeding Demo Data](#seeding-demo-data)
-- [Payment Testing](#payment-testing)
-- [Admin Access](#admin-access)
-- [Deployment Notes](#deployment-notes)
-- [External Services Setup](#external-services-setup)
+[Live Demo](https://omastra.vercel.app) • [Visual Showcase](#-visual-showcase) • [Key Features](#-key-features) • [Tech Stack](#-tech-stack) • [Quick Start](#-quick-start) • [Admin Panel](#-admin-panel)
 
 ---
 
-## Features
+</div>
 
-### Customer Storefront
-- Browsable catalogue with filters (category, price, flavour, dietary, pack size), sorting, and search
-- Product detail pages with nutrition facts, ingredients, allergens, reviews
-- Cart (guest + authenticated) with local persistence
-- Wishlist (guest + authenticated)
-- Multi-step checkout: contact → address → review → payment → confirmation
-- Cash on Delivery and Razorpay online payment
-- Order history, tracking, and account management
-- Saved delivery addresses
+## 📸 Visual Showcase
 
-### Admin Panel (`/admin`)
-- Dashboard with revenue/order/customer metrics and trend charts (Recharts)
-- Product CRUD (create, edit, archive) with variant management
-- Category management
-- Order management with fulfilment status updates
-- Customer management (view, suspend/activate)
-- Coupon management (%, fixed, min order, expiry, usage limits)
-- Review moderation (approve/reject/delete)
-- Inventory stock adjustment with audit log
-- Analytics charts (7d / 30d / 90d / 1y)
+Explore high-resolution screenshots of the OMASTRA platform. All screenshots are archived in the [`screenshots/`](./screenshots/) directory.
 
-### Security
-- HttpOnly cookie-based JWT auth (access token 15m, refresh token 7d)
-- bcrypt password hashing
-- Role-based access control (customer vs admin) enforced on the server
-- Server-side price, coupon, and inventory validation
-- Razorpay payment signature verification server-side
-- Helmet, CORS, and rate limiting
+### 1. Storefront Experience & Category Discovery
+
+| Homepage Hero Experience | Category Grid ("Find Your Fuel") |
+| :---: | :---: |
+| [![Homepage Hero](./screenshots/01-homepage-hero.png)](./screenshots/01-homepage-hero.png) | [![Category Grid](./screenshots/02-categories-showcase.png)](./screenshots/02-categories-showcase.png) |
+| *Hero section with CTA, trusted stats, and flagship Whey Pro spotlight.* | *Interactive visual category navigator with category filters.* |
 
 ---
 
-## Tech Stack
+### 2. Product Catalog & Advanced Filtering
 
-| Layer | Technology |
-|-------|-----------|
-| Frontend | React 18 + Vite + Tailwind CSS |
-| State | React Query (TanStack) + Context API |
-| Routing | React Router v6 |
-| Charts | Recharts |
-| Backend | Node.js + Express |
-| Database | MongoDB + Mongoose |
-| Auth | JWT (HttpOnly cookies) + bcrypt |
-| Payments | Razorpay |
-| Email | Nodemailer (Brevo SMTP) |
-| Media | Cloudinary (optional) |
+| Filterable Shop Catalog | Responsive Grid View |
+| :---: | :---: |
+| [![Shop Catalog](./screenshots/03-shop-catalog.png)](./screenshots/03-shop-catalog.png) | [![Shop Catalog Detail](./screenshots/03-shop-catalog.png)](./screenshots/03-shop-catalog.png) |
+| *Multi-facet filtering: Category, Price, Dietary Badges, Ratings, and Sorting.* | *Real-time discount badges, stock levels, and instant Add-to-Cart triggers.* |
 
 ---
 
-## Project Structure
+### 3. Amazon-Grade Multi-Angle Product Gallery
 
+OMASTRA features an interactive 5-thumbnail image gallery replicating industry-leading D2C supplement storefronts:
+
+| Front View & Variant Selection | Infographic & Benefits Breakdown |
+| :---: | :---: |
+| [![Product Details Front View](./screenshots/04-product-details-gallery.png)](./screenshots/04-product-details-gallery.png) | [![Product Infographic](./screenshots/05-product-infographic-view.png)](./screenshots/05-product-infographic-view.png) |
+| *High-res primary jar render with flavor/size selectors and authenticity seal.* | *Informational banner breaking down protein ratio, BCAAs, and EAAs.* |
+
+| Supplement Facts & Nutrition Panel | Plant-Based Category Spotlight |
+| :---: | :---: |
+| [![Supplement Facts Panel](./screenshots/06-product-back-panel-view.png)](./screenshots/06-product-back-panel-view.png) | [![PlantFuel Product Page](./screenshots/07-plantfuel-product-page.png)](./screenshots/07-plantfuel-product-page.png) |
+| *Clear, high-legibility back panel displaying ingredients and macros.* | *PlantFuel 100% Organic Pea & Brown Rice Protein pouch display.* |
+
+---
+
+### 4. Conversion Funnel: Cart & Checkout
+
+| Shopping Cart & Order Summary | Multi-Step Frictionless Checkout |
+| :---: | :---: |
+| [![Shopping Cart](./screenshots/08-cart-page.png)](./screenshots/08-cart-page.png) | [![Checkout Page](./screenshots/09-checkout-page.png)](./screenshots/09-checkout-page.png) |
+| *Cart drawer/page with live quantity adjustments, coupon validation, and totals.* | *Multi-step checkout: Contact details, Shipping Address, and Payment method.* |
+
+---
+
+## ⚡ Key Features
+
+### 🛒 Customer Storefront
+- **Dynamic Catalogue**: Filter by category, price range, dietary preference (Vegan, Gluten-Free, Keto), flavor, and ratings.
+- **5-Angle Interactive Product Gallery**:
+  - `Angle 01`: Premium Front Product Render
+  - `Angle 02`: 45-Degree Perspective View
+  - `Angle 03`: Detailed Supplement Facts / Back Nutrition Label
+  - `Angle 04`: Infographic & Key Benefits Highlight
+  - `Angle 05`: Lifestyle / In-Action Fitness Context
+- **Variant Engine**: Dynamic switching between flavors (Double Rich Chocolate, Belgian Chocolate, Alphonso Mango, Unflavoured) and pack sizes (1kg, 2kg, 4kg).
+- **Persistent Cart & Wishlist**: Real-time synchronization supporting both guest checkout and logged-in profiles.
+- **Coupon System**: Live promo code engine supporting percentage-based and flat-rate discounts with minimum order thresholds.
+- **Dual Payment Options**:
+  - **Cash on Delivery (COD)** with automated order verification.
+  - **Razorpay Payment Gateway** supporting UPI, Net Banking, Debit/Credit Cards, and Wallets with cryptographic server-side HMAC-SHA256 signature verification.
+
+### 🛡️ Admin Command Center (`/admin`)
+- **Executive KPI Dashboard**: Live revenue, order volumes, average order value (AOV), and customer growth charts powered by **Recharts**.
+- **Product & Inventory Management**: Full CRUD operations, variant stock tracking, threshold alert badges, and multi-image URL uploads.
+- **Order Fulfilment**: Status pipeline (`Pending` → `Processing` → `Shipped` → `Delivered` → `Cancelled`) with order audit logs.
+- **Promotions & Coupon Manager**: Create and manage promo codes with usage limits, expiry timestamps, and tier thresholds.
+- **Customer Directory**: View customer profiles, order history, and account activity.
+- **Review Moderation**: Filter, approve, reject, and monitor verified buyer reviews.
+
+### 🔒 Enterprise Security
+- **JWT Authentication**: Secure HttpOnly cookie architecture with 15-minute access token rotation and 7-day refresh tokens.
+- **Role-Based Access Control (RBAC)**: Enforced strictly at the API controller layer (`requireAdmin`, `protect`).
+- **Cryptographic Security**: Passwords hashed with `bcryptjs` (salt factor 12); Razorpay payment signatures verified with HMAC-SHA256.
+- **Defensive Middleware**: Protection via `helmet`, strict CORS whitelist, Mongo sanitize, and sliding-window rate limiting.
+
+---
+
+## 🛠️ Tech Stack
+
+```mermaid
+graph TD
+    Client[React 18 + Vite SPA] -->|Axios REST / HttpOnly Cookie| Server[Node.js + Express API Gateway]
+    Server -->|Mongoose ODM| DB[(MongoDB Atlas)]
+    Server -->|SDK / HMAC-SHA256| Razorpay[Razorpay Payments]
+    Server -->|SMTP Relay| Brevo[Brevo / Transactional Email]
+    Server -->|Asset Storage| Cloudinary[Cloudinary CDN]
 ```
+
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend Framework** | [React 18](https://react.dev/), [Vite 5](https://vitejs.dev/) |
+| **Styling & Design** | [Tailwind CSS 3.4](https://tailwindcss.com/), [Lucide React](https://lucide.dev/), Headless UI |
+| **Data Fetching & State** | [TanStack React Query](https://tanstack.com/query/latest), React Context API |
+| **Routing & Navigation** | [React Router v6](https://reactrouter.com/) |
+| **Data Visualization** | [Recharts](https://recharts.org/) |
+| **Backend Server** | [Node.js](https://nodejs.org/), [Express 4](https://expressjs.com/) |
+| **Database & ODM** | [MongoDB](https://www.mongodb.com/), [Mongoose](https://mongoosejs.com/) |
+| **Authentication** | JSON Web Tokens (`jsonwebtoken`), `bcryptjs`, Cookie-Parser |
+| **Payment Gateway** | [Razorpay SDK](https://razorpay.com/) (Test & Live Mode) |
+| **Transactional Email** | [Nodemailer](https://nodemailer.com/), Brevo SMTP Relay |
+
+---
+
+## 📂 Project Structure
+
+```bash
 omastra/
-  client/               # React + Vite frontend
-    src/
-      components/       # Reusable UI + layout components
-      context/          # Auth, Cart, Wishlist context providers
-      hooks/            # Custom hooks
-      lib/              # Axios instance, utils
-      pages/            # Route-level pages (admin/, home/, shop/, ...)
-      routes/           # AppRouter + ProtectedRoute
-      services/         # API call functions
-  server/               # Express backend
-    src/
-      config/           # DB connection
-      controllers/      # Route handlers
-      middleware/        # auth, errorHandler, upload, validate
-      models/           # Mongoose schemas
-      routes/           # Express routers
-      seeds/            # Demo data seed script
-      services/         # Email service
-      utils/            # AppError, apiResponse, catchAsync
+├── screenshots/               # High-res screenshots of the live platform
+│   ├── 01-homepage-hero.png
+│   ├── 02-categories-showcase.png
+│   ├── 03-shop-catalog.png
+│   ├── 04-product-details-gallery.png
+│   ├── 05-product-infographic-view.png
+│   ├── 06-product-back-panel-view.png
+│   ├── 07-plantfuel-product-page.png
+│   ├── 08-cart-page.png
+│   └── 09-checkout-page.png
+├── client/                    # React + Vite frontend
+│   ├── public/                # Static assets & favicon
+│   ├── src/
+│   │   ├── components/        # UI components (Header, Footer, Gallery, Modals)
+│   │   ├── context/           # AuthContext, CartContext, WishlistContext
+│   │   ├── hooks/             # Custom utility hooks
+│   │   ├── lib/               # Axios client configuration & helpers
+│   │   ├── pages/             # Page components
+│   │   │   ├── admin/         # Admin dashboard & management views
+│   │   │   ├── auth/          # Login, Register, Password Reset
+│   │   │   ├── checkout/      # Multi-step checkout flow
+│   │   │   ├── home/          # Hero, category cards, featured products
+│   │   │   └── shop/          # Catalog & product detail with 5-image gallery
+│   │   ├── routes/            # AppRouter & ProtectedRoute wrapper
+│   │   └── services/          # API service endpoints
+│   ├── package.json
+│   └── vite.config.js
+├── server/                    # Node.js + Express backend
+│   ├── src/
+│   │   ├── config/            # Database connection & third-party configs
+│   │   ├── controllers/       # Controller handlers (Auth, Product, Order, etc.)
+│   │   ├── middleware/        # Auth verification, error handling, rate limiting
+│   │   ├── models/            # Mongoose Schemas (User, Product, Order, Coupon)
+│   │   ├── routes/            # REST API endpoints
+│   │   ├── seeds/             # Database seeder scripts
+│   │   ├── services/          # Email & third-party integrations
+│   │   └── server.js          # Express app entry point
+│   ├── package.json
+│   └── .env.example
+└── README.md                  # Project documentation
 ```
 
 ---
 
-## Prerequisites
+## 🚀 Quick Start
 
-- Node.js >= 18
-- MongoDB (local or MongoDB Atlas)
-- npm or yarn
+### 1. Prerequisites
+- **Node.js** >= 18.0.0
+- **MongoDB** (Local instance or [MongoDB Atlas](https://www.mongodb.com/atlas))
+- **npm** or **yarn**
 
----
-
-## Installation
+### 2. Clone and Install Dependencies
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone https://github.com/TanujGupta21/omastra.git
 cd omastra
 
-# Install server dependencies
+# Install Backend dependencies
 cd server
 npm install
 
-# Install client dependencies
+# Install Frontend dependencies
 cd ../client
 npm install
 ```
 
 ---
 
-## Environment Variables
+## ⚙️ Environment Variables
 
-### Server (`server/.env`)
+### Backend Configuration (`server/.env`)
+Create a `.env` file in the `server` directory:
 
-Copy `server/.env.example` and fill in your values:
+```env
+PORT=5000
+NODE_ENV=development
+CLIENT_URL=http://localhost:5173
 
-```bash
-cp server/.env.example server/.env
+# Database
+MONGO_URI=mongodb://localhost:27017/omastra
+
+# Authentication (JWT)
+JWT_ACCESS_SECRET=your_super_secret_access_key_min_32_chars
+JWT_REFRESH_SECRET=your_super_secret_refresh_key_min_32_chars
+JWT_ACCESS_EXPIRE=15m
+JWT_REFRESH_EXPIRE=7d
+
+# Payment Gateway (Razorpay)
+RAZORPAY_KEY_ID=rzp_test_your_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_secret
+
+# Image Management (Cloudinary)
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# Transactional Email (SMTP / Brevo)
+SMTP_HOST=smtp-relay.brevo.com
+SMTP_PORT=587
+SMTP_USER=your_smtp_user
+SMTP_PASS=your_smtp_password
+EMAIL_FROM=support@omastra.com
+
+# Demo Seeding Credentials
+ADMIN_EMAIL=admin@omastra.com
+ADMIN_PASSWORD=AdminStrongPassword123!
 ```
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `PORT` | Server port (default 5000) | Yes |
-| `NODE_ENV` | `development` or `production` | Yes |
-| `CLIENT_URL` | Frontend origin for CORS | Yes |
-| `MONGO_URI` | MongoDB connection string | Yes |
-| `JWT_ACCESS_SECRET` | Secret for access tokens | Yes |
-| `JWT_REFRESH_SECRET` | Secret for refresh tokens | Yes |
-| `JWT_ACCESS_EXPIRE` | Access token TTL (e.g. `15m`) | Yes |
-| `JWT_REFRESH_EXPIRE` | Refresh token TTL (e.g. `7d`) | Yes |
-| `RAZORPAY_KEY_ID` | Razorpay test/live key ID | Payments |
-| `RAZORPAY_KEY_SECRET` | Razorpay secret | Payments |
-| `CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name | Image uploads |
-| `CLOUDINARY_API_KEY` | Cloudinary API key | Image uploads |
-| `CLOUDINARY_API_SECRET` | Cloudinary API secret | Image uploads |
-| `SMTP_HOST` | SMTP host (e.g. smtp-relay.brevo.com) | Emails |
-| `SMTP_PORT` | SMTP port (587) | Emails |
-| `SMTP_USER` | SMTP user | Emails |
-| `SMTP_PASS` | SMTP password | Emails |
-| `EMAIL_FROM` | Sender email address | Emails |
-| `ADMIN_EMAIL` | Admin account email (seed only) | Seed |
-| `ADMIN_PASSWORD` | Admin account password (seed only) | Seed |
+### Frontend Configuration (`client/.env`)
+Create a `.env` file in the `client` directory:
 
-### Client (`client/.env`)
-
-```bash
+```env
 VITE_RAZORPAY_KEY_ID=rzp_test_your_key_id
 ```
 
 ---
 
-## Running in Development
+## 🏃 Running in Development
 
-Open two terminals:
+Run both the server and client dev servers:
 
-**Terminal 1 — Backend:**
 ```bash
+# Terminal 1: Backend API (runs on http://localhost:5000)
 cd server
 npm run dev
-# Starts on http://localhost:5000
-```
 
-**Terminal 2 — Frontend:**
-```bash
+# Terminal 2: Frontend Vite App (runs on http://localhost:5173)
 cd client
 npm run dev
-# Starts on http://localhost:5173
 ```
 
-The Vite dev server proxies all `/api` requests to `http://localhost:5000`.
+The Vite dev server automatically proxies API requests to `http://localhost:5000/api`.
 
 ---
 
-## Seeding Demo Data
+## 📦 Seeding Demo Data
+
+Seed your MongoDB database with realistic categories, product catalog with multi-image gallery sets, promo coupons, and an administrator account:
 
 ```bash
 cd server
 npm run seed
 ```
 
-This creates:
-- 1 admin user (credentials from `ADMIN_EMAIL` / `ADMIN_PASSWORD` in `.env`)
-- 7 product categories
-- 15+ fictional demo products across all categories
-- Sample coupons (`OMASTRA10`, `WELCOME15`, `SAVE200`)
-
-> **Note:** All seeded products, prices, and nutrition data are **fictional placeholders**. Replace with verified data before launch.
+This populates:
+- **Admin Account**: Email & Password configured in `server/.env`
+- **7 Product Categories**: Whey Protein, Plant Protein, Creatine, Pre-Workout, Hydration, BCAAs, Multivitamins
+- **15+ High-Performance Products** complete with pricing, stock variants, ingredients, and nutrition facts
+- **Active Promotional Coupons**: `OMASTRA10`, `WELCOME15`, `SAVE200`
 
 ---
 
-## Admin Access
+## 🔐 Admin Panel Access
 
-After seeding:
+1. Navigate to `http://localhost:5173/auth/login`
+2. Sign in with your seeded administrator credentials (`ADMIN_EMAIL` / `ADMIN_PASSWORD`)
+3. Access the dashboard at `http://localhost:5173/admin`
 
-1. Go to `http://localhost:5173/auth/login`
-2. Sign in with `ADMIN_EMAIL` / `ADMIN_PASSWORD` from your `.env`
-3. You will be redirected to `/admin`
-
-> Admin access is enforced server-side via `requireAdmin` middleware. UI-only role changes have no effect.
+> **Note:** Administrative privileges are strictly enforced on all server routes using the `requireAdmin` middleware. Unauthorized API calls receive `403 Forbidden`.
 
 ---
 
-## Payment Testing
+## 💳 Payment Gateway Setup
 
-### Cash on Delivery
-No configuration needed. Select "Cash on Delivery" at checkout.
+### Cash on Delivery (COD)
+COD is enabled out of the box with zero third-party setup required.
 
-### Razorpay (Test Mode)
-
-1. Create a free Razorpay account at [razorpay.com](https://razorpay.com)
-2. Get your **Test** Key ID and Key Secret from the Razorpay Dashboard → Settings → API Keys
-3. Add them to `server/.env`:
-   ```
-   RAZORPAY_KEY_ID=rzp_test_...
-   RAZORPAY_KEY_SECRET=...
-   ```
-4. Add to `client/.env`:
-   ```
-   VITE_RAZORPAY_KEY_ID=rzp_test_...
-   ```
-5. Use Razorpay test card details from their [test documentation](https://razorpay.com/docs/payments/payments/test-card-upi-details/)
-
-> Payment signatures are verified **server-side**. The frontend cannot falsely confirm a payment.
+### Razorpay Integration (Test Mode)
+1. Sign up for a free merchant account at [Razorpay](https://razorpay.com).
+2. Generate your **Test Key ID** and **Test Key Secret** from Dashboard → **Settings** → **API Keys**.
+3. Add the keys to `server/.env` and `client/.env`.
+4. Test using standard test card credentials provided in the [Razorpay Docs](https://razorpay.com/docs/payments/payments/test-card-upi-details/).
 
 ---
 
-## External Services Setup
+## 📡 REST API Reference
 
-### Cloudinary (Product Images)
-Without Cloudinary, product images use placeholder URLs from the seed. To enable uploads:
-1. Create account at [cloudinary.com](https://cloudinary.com)
-2. Add credentials to `server/.env`
+All API routes are prefixed under `/api/v1/`:
 
-### Brevo / SMTP (Transactional Email)
-Without SMTP config, order confirmation emails are logged to the console. To enable:
-1. Create account at [brevo.com](https://brevo.com)
-2. Get SMTP credentials from Brevo → SMTP & API
-3. Add to `server/.env`
-
----
-
-## Deployment Notes
-
-1. Set `NODE_ENV=production` in server environment
-2. Set `CLIENT_URL` to your production frontend domain
-3. Use a strong, random `JWT_ACCESS_SECRET` and `JWT_REFRESH_SECRET`
-4. Switch Razorpay keys from test to live mode
-5. Build the frontend: `cd client && npm run build`
-6. Serve the `client/dist` folder from your reverse proxy (Nginx/Caddy) or static hosting
-7. Run the backend with a process manager (PM2): `pm2 start src/server.js`
+| Endpoint | Method | Access | Description |
+| :--- | :---: | :---: | :--- |
+| `/api/v1/auth/register` | `POST` | Public | Register new user account |
+| `/api/v1/auth/login` | `POST` | Public | Authenticate user & issue HttpOnly JWT |
+| `/api/v1/auth/logout` | `POST` | Public | Clear auth cookies |
+| `/api/v1/auth/me` | `GET` | User | Get current user profile |
+| `/api/v1/products` | `GET` | Public | List products with search, filters & pagination |
+| `/api/v1/products/:id` | `GET` | Public | Get single product with full gallery & variants |
+| `/api/v1/products` | `POST` | Admin | Create new product |
+| `/api/v1/cart` | `GET` | User/Guest | Retrieve current cart items |
+| `/api/v1/cart/items` | `POST` | User/Guest | Add item to cart |
+| `/api/v1/orders` | `POST` | User | Create a new order (COD or Razorpay) |
+| `/api/v1/payments/verify` | `POST` | User | Verify Razorpay payment signature |
+| `/api/v1/coupons/apply` | `POST` | User | Validate and apply promo coupon |
+| `/api/v1/admin/dashboard` | `GET` | Admin | Fetch analytics, revenue charts & KPI counters |
 
 ---
 
-## API Overview
+## 📄 License & Attribution
 
-All API endpoints are under `/api/v1/`.
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
-| Prefix | Description |
-|--------|-------------|
-| `/api/v1/auth` | Register, login, logout, refresh, /me |
-| `/api/v1/products` | Product catalogue (admin write) |
-| `/api/v1/categories` | Categories (admin write) |
-| `/api/v1/cart` | Guest + user cart |
-| `/api/v1/orders` | Order creation + management |
-| `/api/v1/coupons` | Coupon validation + admin CRUD |
-| `/api/v1/reviews` | Product reviews + moderation |
-| `/api/v1/users` | Profile + addresses |
-| `/api/v1/payments` | Razorpay order creation + verification |
-| `/api/v1/inventory` | Stock adjustments + logs (admin) |
-| `/api/v1/admin` | Dashboard, analytics, customers |
+Developed with passion for fitness and modern web engineering.
 
 ---
 
-## Important Notes
-
-- **All demo data is fictional.** Do not use seeded nutrition values, ingredients, or product claims in production without verification.
-- **Never ship `ADMIN_PASSWORD` in source code.** The seed script reads it from `.env` and is development-only.
-- **Razorpay** and **Cloudinary** credentials are required for full functionality. The app degrades gracefully without them.
+<div align="center">
+  <sub>Built with ❤️ by Tanuj Gupta • Powered by OMASTRA</sub>
+</div>
