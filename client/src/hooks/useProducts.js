@@ -96,10 +96,12 @@ export function useRelatedProducts(slug) {
     queryFn: async () => {
       try {
         const { data } = await api.get(`/api/v1/products/slug/${slug}/related`);
-        return data.data || [];
+        const result = data?.data || data;
+        if (Array.isArray(result) && result.length > 0) return result;
       } catch {
-        return [];
+        // Fallback
       }
+      return MOCK_PRODUCTS.filter((p) => p.slug !== slug).slice(0, 4);
     },
     enabled: !!slug,
     staleTime: 1000 * 60 * 5,

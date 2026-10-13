@@ -31,7 +31,7 @@ export default function ProductDetailPage() {
   const [tab, setTab] = useState('Description')
   const [adding, setAdding] = useState(false)
 
-  const { data: product, isLoading, refetch } = useQuery({
+  const { data: product, isLoading, isError, refetch } = useQuery({
     queryKey: ['product', slug],
     queryFn: async () => {
       try {
