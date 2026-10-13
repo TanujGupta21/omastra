@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <filter id="cardShadow4" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1000" fill="#F8FAFC"/>
+
+  <!-- Card -->
+  <rect x="220" y="80" width="560" height="840" rx="20" fill="#FFFFFF" stroke="#000000" stroke-width="2" filter="url(#cardShadow4)"/>
+
+  <!-- Header -->
+  <text x="500" y="140" font-family="-apple-system, sans-serif" font-size="28" font-weight="900" letter-spacing="2" fill="#000000" text-anchor="middle">OMASTRA</text>
+  <text x="500" y="170" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#64748B" text-anchor="middle">TRIPLE STRENGTH OMEGA-3 — SUPPLEMENT FACTS</text>
+  <line x1="250" y1="190" x2="750" y2="190" stroke="#000000" stroke-width="8"/>
+
+  <!-- Serving Info -->
+  <text x="260" y="220" font-family="-apple-system, sans-serif" font-size="16" font-weight="700" fill="#000000">Serving Size: 1 Softgel</text>
+  <text x="260" y="244" font-family="-apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748B">Servings Per Container: 60 Softgels</text>
+  <line x1="250" y1="260" x2="750" y2="260" stroke="#000000" stroke-width="4"/>
+
+  <!-- Calories -->
+  <text x="260" y="295" font-family="-apple-system, sans-serif" font-size="18" font-weight="800" fill="#000000">Calories: 10</text>
+  <text x="740" y="295" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#64748B" text-anchor="end">Calories from Fat: 10</text>
+  <line x1="250" y1="315" x2="750" y2="315" stroke="#000000" stroke-width="3"/>
+
+  <!-- Macro Rows -->
+  <g font-family="-apple-system, sans-serif" font-size="15">
+    <text x="260" y="348" font-weight="800" fill="#000000">Total Fat 1.2g</text>
+    <text x="740" y="348" font-weight="700" fill="#000000" text-anchor="end">2%</text>
+    <line x1="250" y1="365" x2="750" y2="365" stroke="#E2E8F0" stroke-width="1"/>
+
+    <text x="280" y="392" font-weight="500" fill="#64748B">Cholesterol &lt; 5mg</text>
+    <text x="740" y="392" font-weight="600" fill="#64748B" text-anchor="end">1%</text>
+    <line x1="250" y1="410" x2="750" y2="410" stroke="#000000" stroke-width="3"/>
+
+    <!-- Omega-3 Highlights -->
+    <text x="260" y="448" font-weight="900" font-size="17" fill="#000000">TOTAL OMEGA-3 FATTY ACIDS 1,000mg</text>
+    <text x="740" y="448" font-weight="800" font-size="16" fill="#000000" text-anchor="end">*</text>
+    <line x1="250" y1="468" x2="750" y2="468" stroke="#000000" stroke-width="4"/>
+
+    <text x="280" y="500" font-weight="800" font-size="16" fill="#000000">EPA (Eicosapentaenoic Acid) 550mg</text>
+    <text x="740" y="500" font-weight="700" fill="#000000" text-anchor="end">*</text>
+    <line x1="250" y1="520" x2="750" y2="520" stroke="#E2E8F0" stroke-width="1"/>
+
+    <text x="280" y="552" font-weight="800" font-size="16" fill="#000000">DHA (Docosahexaenoic Acid) 350mg</text>
+    <text x="740" y="552" font-weight="700" fill="#000000" text-anchor="end">*</text>
+    <line x1="250" y1="572" x2="750" y2="572" stroke="#E2E8F0" stroke-width="1"/>
+
+    <text x="280" y="605" font-weight="600" fill="#64748B">Other Omega-3 Fatty Acids 100mg</text>
+    <text x="740" y="605" font-weight="700" fill="#000000" text-anchor="end">*</text>
+    <line x1="250" y1="628" x2="750" y2="628" stroke="#000000" stroke-width="4"/>
+  </g>
+
+  <!-- Ingredients Block -->
+  <text x="260" y="665" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#000000">OTHER INGREDIENTS:</text>
+  <text x="260" y="688" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#475569">Gelatin (Softgel Shell), Vegetable Glycerin, Purified Water,</text>
+  <text x="260" y="708" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#475569">Natural Organic Lemon Oil, Mixed Tocopherols (Vitamin E as antioxidant).</text>
+
+  <text x="260" y="745" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#000000">ALLERGEN INFORMATION:</text>
+  <text x="260" y="768" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#475569">Contains Fish (Deep-Sea Anchovies, Sardines). Free from dairy, gluten, soy.</text>
+
+  <text x="260" y="805" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#000000">DIRECTIONS FOR USE:</text>
+  <text x="260" y="828" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#475569">Take 1 softgel daily with a meal containing dietary fats, or as directed</text>
+  <text x="260" y="848" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#475569">by your healthcare professional.</text>
+
+  <!-- Bottom Badges -->
+  <rect x="260" y="875" width="95" height="24" rx="12" fill="#000000"/>
+  <text x="307" y="891" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">550mg EPA</text>
+
+  <rect x="365" y="875" width="95" height="24" rx="12" fill="#000000"/>
+  <text x="412" y="891" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">350mg DHA</text>
+
+  <rect x="470" y="875" width="100" height="24" rx="12" fill="#000000"/>
+  <text x="520" y="891" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">ANTI-BURP</text>
+</svg>

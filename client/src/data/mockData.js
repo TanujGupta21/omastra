@@ -74,7 +74,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-whey', name: 'Whey Protein', slug: 'whey-protein' },
     image: '/products/whey-pro.png',
     images: [
-      { url: '/products/whey-pro.png', alt: 'OMASTRA Whey Pro Classic Blend', isPrimary: true },
+      { url: '/products/whey-pro.png', alt: 'OMASTRA Whey Pro Classic Blend - Front View', label: 'Front' },
+      { url: '/products/whey-pro-angled.jpg', alt: 'OMASTRA Whey Pro - Angled 3/4 View', label: 'Angle' },
+      { url: '/products/whey-pro-infographic.jpg', alt: 'OMASTRA Whey Pro - Nutrition & Benefits', label: 'Benefits' },
+      { url: '/products/whey-pro-back.jpg', alt: 'OMASTRA Whey Pro - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/whey-pro-lifestyle.jpg', alt: 'OMASTRA Whey Pro - In-Action Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'WP-CHOC-1KG', flavor: 'Chocolate Fudge', size: '1 kg', servings: 33, price: 1799, originalPrice: 2199, stock: 120 },
@@ -116,7 +120,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-whey', name: 'Whey Protein', slug: 'whey-protein' },
     image: '/products/whey-isolate.png',
     images: [
-      { url: '/products/whey-isolate.png', alt: 'OMASTRA Whey Isolate 90', isPrimary: true },
+      { url: '/products/whey-isolate.png', alt: 'OMASTRA Whey Isolate 90 - Front View', label: 'Front' },
+      { url: '/products/whey-isolate-angled.svg', alt: 'OMASTRA Whey Isolate 90 - CFM Purity Specs', label: 'Specs' },
+      { url: '/products/whey-isolate-infographic.jpg', alt: 'OMASTRA Whey Isolate 90 - Nutrition & Benefits', label: 'Benefits' },
+      { url: '/products/whey-isolate-back.jpg', alt: 'OMASTRA Whey Isolate 90 - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/whey-isolate-lifestyle.jpg', alt: 'OMASTRA Whey Isolate 90 - In-Action Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'WI90-CHOC-1KG', flavor: 'Dark Chocolate', size: '1 kg', servings: 30, price: 2499, originalPrice: 2999, stock: 75 },
@@ -155,7 +163,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-creatine', name: 'Creatine', slug: 'creatine' },
     image: '/products/creatine.png',
     images: [
-      { url: '/products/creatine.png', alt: 'OMASTRA Creatine Monohydrate', isPrimary: true },
+      { url: '/products/creatine.png', alt: 'OMASTRA Creatine Monohydrate - Front View', label: 'Front' },
+      { url: '/products/creatine-usage.svg', alt: 'OMASTRA Creatine - Dosing Protocol & Micro-Mesh', label: 'Protocol' },
+      { url: '/products/creatine-infographic.jpg', alt: 'OMASTRA Creatine - Nutrition & Power Benefits', label: 'Benefits' },
+      { url: '/products/creatine-back.jpg', alt: 'OMASTRA Creatine - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/creatine-lifestyle.jpg', alt: 'OMASTRA Creatine - Dumbbell & Shaker Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'CR-UNFL-250G', flavor: 'Unflavoured', size: '250g', servings: 50, price: 699, originalPrice: 899, stock: 150 },
@@ -194,7 +206,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-pre', name: 'Pre-Workout', slug: 'pre-workout' },
     image: '/products/nitropre.png',
     images: [
-      { url: '/products/nitropre.png', alt: 'OMASTRA NitroPre Pre-Workout Igniter', isPrimary: true },
+      { url: '/products/nitropre.png', alt: 'OMASTRA NitroPre Pre-Workout - Front View', label: 'Front' },
+      { url: '/products/nitropre-timing.svg', alt: 'OMASTRA NitroPre - Performance Timing & Kinetics', label: 'Timing' },
+      { url: '/products/nitropre-infographic.jpg', alt: 'OMASTRA NitroPre - Energy & Pump Matrix', label: 'Benefits' },
+      { url: '/products/nitropre-back.jpg', alt: 'OMASTRA NitroPre - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/nitropre-lifestyle.jpg', alt: 'OMASTRA NitroPre - Locker Room Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'NP-PUNCH-300G', flavor: 'Fruit Punch', size: '300g', servings: 30, price: 1299, originalPrice: 1599, stock: 80 },
@@ -233,7 +249,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-plant', name: 'Plant Protein', slug: 'plant-protein' },
     image: '/products/plant-fuel.png',
     images: [
-      { url: '/products/plant-fuel.png', alt: 'OMASTRA PlantFuel Pea & Brown Rice', isPrimary: true },
+      { url: '/products/plant-fuel.png', alt: 'OMASTRA PlantFuel Vegan Protein - Front View', label: 'Front' },
+      { url: '/products/plant-fuel-aminos.svg', alt: 'OMASTRA PlantFuel - Amino Acid Spectrum', label: 'Aminos' },
+      { url: '/products/plant-fuel-infographic.svg', alt: 'OMASTRA PlantFuel - Nutrition & Benefits', label: 'Benefits' },
+      { url: '/products/plant-fuel-back.svg', alt: 'OMASTRA PlantFuel - Nutrition Facts Back Panel', label: 'Back' },
+      { url: '/products/plant-fuel-lifestyle.svg', alt: 'OMASTRA PlantFuel - Daily Smoothie Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'PF-CHOC-1KG', flavor: 'Cacao & Coconut', size: '1 kg', servings: 28, price: 2199, originalPrice: 2599, stock: 70 },
@@ -272,7 +292,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-electrolytes', name: 'Electrolytes', slug: 'electrolytes' },
     image: '/products/hydrocharge.png',
     images: [
-      { url: '/products/hydrocharge.png', alt: 'OMASTRA HydroCharge Electrolyte Matrix', isPrimary: true },
+      { url: '/products/hydrocharge.png', alt: 'OMASTRA HydroCharge Electrolyte - Front View', label: 'Front' },
+      { url: '/products/hydrocharge-hydration.svg', alt: 'OMASTRA HydroCharge - Osmotic Hydration Science', label: 'Hydration' },
+      { url: '/products/hydrocharge-infographic.svg', alt: 'OMASTRA HydroCharge - 6-Electrolyte Balance', label: 'Benefits' },
+      { url: '/products/hydrocharge-back.svg', alt: 'OMASTRA HydroCharge - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/hydrocharge-lifestyle.svg', alt: 'OMASTRA HydroCharge - Ice & Citrus Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'HC-LEMON-30SERV', flavor: 'Zesty Lemon Lime', size: '30 Servings', servings: 30, price: 899, originalPrice: 1099, stock: 110 },
@@ -311,7 +335,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-snacks', name: 'Protein Snacks', slug: 'protein-snacks' },
     image: '/products/protein-bar.png',
     images: [
-      { url: '/products/protein-bar.png', alt: 'OMASTRA Protein Crunch Bar Box of 12', isPrimary: true },
+      { url: '/products/protein-bar.png', alt: 'OMASTRA Protein Crunch Bar - Front View', label: 'Front' },
+      { url: '/products/protein-bar-texture.svg', alt: 'OMASTRA Protein Crunch Bar - Triple Layer Architecture', label: 'Layers' },
+      { url: '/products/protein-bar-infographic.svg', alt: 'OMASTRA Protein Crunch Bar - Nutrition & Macros', label: 'Benefits' },
+      { url: '/products/protein-bar-back.svg', alt: 'OMASTRA Protein Crunch Bar - Nutritional Facts Back Panel', label: 'Back' },
+      { url: '/products/protein-bar-lifestyle.svg', alt: 'OMASTRA Protein Crunch Bar - On-The-Go Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'PB-CHOCPB-12PK', flavor: 'Dark Chocolate Peanut Butter', size: '12 x 60g', servings: 12, price: 1499, originalPrice: 1799, stock: 65 },
@@ -349,7 +377,11 @@ export const MOCK_PRODUCTS = [
     category: { _id: 'cat-wellness', name: 'Wellness', slug: 'wellness' },
     image: '/products/omega-3.png',
     images: [
-      { url: '/products/omega-3.png', alt: 'OMASTRA Triple Strength Omega-3', isPrimary: true },
+      { url: '/products/omega-3.png', alt: 'OMASTRA Triple Strength Omega-3 - Front View', label: 'Front' },
+      { url: '/products/omega-3-purity.svg', alt: 'OMASTRA Triple Strength Omega-3 - Molecular Purity Standard', label: 'Purity' },
+      { url: '/products/omega-3-infographic.svg', alt: 'OMASTRA Triple Strength Omega-3 - 550 EPA / 350 DHA High Potency', label: 'Benefits' },
+      { url: '/products/omega-3-back.svg', alt: 'OMASTRA Triple Strength Omega-3 - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/omega-3-lifestyle.svg', alt: 'OMASTRA Triple Strength Omega-3 - Golden Softgels Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'O3-60CAPS', flavor: 'Lemon Coated Softgels', size: '60 Softgels', servings: 60, price: 999, originalPrice: 1299, stock: 120 },

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="amGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EDF2F7"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#amGrad)"/>
+
+  <!-- Top Pill -->
+  <rect x="330" y="45" width="340" height="38" rx="19" fill="#000000"/>
+  <text x="500" y="69" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">COMPLETE AMINO ACID SPECTRUM</text>
+
+  <!-- Product Image Center -->
+  <image href="/products/plant-fuel.png" x="280" y="140" width="440" height="660" preserveAspectRatio="xMidYMid meet" filter="url(#softShadow)"/>
+
+  <!-- Card Left: BCAAs -->
+  <g transform="translate(60, 240)">
+    <rect width="250" height="150" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#64748B">BRANCHED CHAIN AMINOS</text>
+    <text x="20" y="68" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#000000">4.2g BCAAs</text>
+    <text x="20" y="98" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Leucine: 2.1g</text>
+    <text x="20" y="118" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Isoleucine: 1.1g · Valine: 1.0g</text>
+    <text x="20" y="138" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#94A3B8">Optimal 2:1:1 ratio for protein synthesis</text>
+  </g>
+
+  <!-- Card Right: EAAs -->
+  <g transform="translate(690, 240)">
+    <rect width="250" height="150" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#64748B">ESSENTIAL AMINO ACIDS</text>
+    <text x="20" y="68" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#000000">9.8g EAAs</text>
+    <text x="20" y="98" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">All 9 Essential Aminos</text>
+    <text x="20" y="118" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Pea + Brown Rice Complement</text>
+    <text x="20" y="138" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#94A3B8">High lysine and methionine synergy</text>
+  </g>
+
+  <!-- Card Left Bottom: Digestive -->
+  <g transform="translate(60, 620)">
+    <rect width="250" height="130" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#000000">DIGEZYME® COMPLEX</text>
+    <text x="20" y="66" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">Enhanced Bio-Absorption</text>
+    <text x="20" y="90" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Prevents bloating and accelerates amino acid release</text>
+  </g>
+
+  <!-- Card Right Bottom: Smoothness -->
+  <g transform="translate(690, 620)">
+    <rect width="250" height="130" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#000000">ZERO CHALKINESS</text>
+    <text x="20" y="66" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">Ultra-Fine Micro-Milled</text>
+    <text x="20" y="90" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Silky smooth mouthfeel without earthiness</text>
+  </g>
+
+  <text x="500" y="940" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#000000" text-anchor="middle">OMASTRA PLANT FUEL — LAB-VERIFIED AMINO PROFILE</text>
+</svg>

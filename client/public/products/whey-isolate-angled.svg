@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="isoGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#isoGrad)"/>
+  <circle cx="500" cy="520" r="380" fill="none" stroke="#000000" stroke-width="1" stroke-opacity="0.06"/>
+  <circle cx="500" cy="520" r="440" fill="none" stroke="#000000" stroke-width="1" stroke-opacity="0.03"/>
+
+  <!-- Top Badge -->
+  <rect x="340" y="45" width="320" height="38" rx="19" fill="#000000"/>
+  <text x="500" y="69" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">CROSS-FLOW MICROFILTERED</text>
+
+  <!-- Angled / 3D Product Presentation -->
+  <g transform="translate(500, 520) scale(0.92) translate(-500, -520)">
+    <image href="/products/whey-isolate.png" x="260" y="140" width="480" height="720" preserveAspectRatio="xMidYMid meet" filter="url(#softShadow)"/>
+  </g>
+
+  <!-- Spec Badges -->
+  <g transform="translate(80, 220)">
+    <rect width="210" height="72" rx="14" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="24" y="32" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#64748B">PROTEIN PURITY</text>
+    <text x="24" y="58" font-family="-apple-system, sans-serif" font-size="24" font-weight="900" fill="#000000">90% CFM WPI</text>
+  </g>
+
+  <g transform="translate(80, 640)">
+    <rect width="210" height="72" rx="14" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="24" y="32" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#64748B">LACTOSE PER SERVING</text>
+    <text x="24" y="58" font-family="-apple-system, sans-serif" font-size="24" font-weight="900" fill="#000000">&lt; 0.5g Minimal</text>
+  </g>
+
+  <g transform="translate(710, 220)">
+    <rect width="210" height="72" rx="14" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="24" y="32" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#64748B">BIOACTIVE PEPTIDES</text>
+    <text x="24" y="58" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#000000">Preserved Native</text>
+  </g>
+
+  <g transform="translate(710, 640)">
+    <rect width="210" height="72" rx="14" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="24" y="32" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#64748B">DIGESTIBILITY</text>
+    <text x="24" y="58" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#000000">Rapid 15-Min</text>
+  </g>
+
+  <text x="500" y="940" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#000000" text-anchor="middle">OMASTRA PERFORMANCE LABS — LAB VERIFIED BATCH</text>
+</svg>

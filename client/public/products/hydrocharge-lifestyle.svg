@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="hcLifeGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F0FDFA"/>
+      <stop offset="100%" stop-color="#CCFBF1"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#hcLifeGrad)"/>
+
+  <!-- Crisp Counter Surface -->
+  <rect y="760" width="1000" height="240" fill="#E2E8F0"/>
+  <line x1="0" y1="760" x2="1000" y2="760" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- Cold Water Glass with Lime & Ice Left -->
+  <g transform="translate(130, 470)">
+    <rect x="25" y="40" width="130" height="270" rx="16" fill="#FFFFFF" fill-opacity="0.85" stroke="#94A3B8" stroke-width="2"/>
+    <!-- Cold electrolyte liquid -->
+    <path d="M 27,110 L 153,110 L 153,300 C 153,306 148,310 142,310 L 38,310 C 32,310 27,306 27,300 Z" fill="#A7F3D0" fill-opacity="0.6"/>
+    <!-- Ice cubes inside glass -->
+    <rect x="50" y="160" width="40" height="40" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#6EE7B7" stroke-width="1.5" transform="rotate(12 70 180)"/>
+    <rect x="80" y="210" width="42" height="42" rx="6" fill="#FFFFFF" fill-opacity="0.75" stroke="#6EE7B7" stroke-width="1.5" transform="rotate(-15 101 231)"/>
+    <!-- Lime Slice On Rim -->
+    <circle cx="28" cy="40" r="32" fill="#84CC16" stroke="#4D7C0F" stroke-width="2"/>
+    <circle cx="28" cy="40" r="26" fill="#BEF264"/>
+    <path d="M 28,14 L 28,66 M 2,40 L 54,40 M 10,22 L 46,58 M 10,58 L 46,22" stroke="#4D7C0F" stroke-width="1.5"/>
+    <text x="90" y="340" font-family="-apple-system, sans-serif" font-size="12" font-weight="800" fill="#0F766E" text-anchor="middle">INSTANTLY SOLUBLE</text>
+  </g>
+
+  <!-- Tub / Pack Center -->
+  <image href="/products/hydrocharge.png" x="290" y="140" width="460" height="660" preserveAspectRatio="xMidYMid meet" filter="url(#softShadow)"/>
+
+  <!-- Himalayan Salt Rocks Dish Right -->
+  <g transform="translate(740, 560)">
+    <ellipse cx="90" cy="180" rx="85" ry="30" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+    <!-- Pink Salt Crystal elements -->
+    <polygon points="60,170 75,150 90,175 70,185" fill="#FDA4AF" stroke="#F43F5E" stroke-width="1"/>
+    <polygon points="90,175 108,155 125,178 105,188" fill="#FB7185" stroke="#E11D48" stroke-width="1"/>
+    <polygon points="115,178 130,165 140,182 125,188" fill="#FECDD3" stroke="#F43F5E" stroke-width="1"/>
+    <text x="90" y="235" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#475569" text-anchor="middle">HIMALAYAN PINK SALT</text>
+  </g>
+
+  <!-- Top Pill -->
+  <rect x="340" y="45" width="320" height="38" rx="19" fill="#000000"/>
+  <text x="500" y="69" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">RAPID CELLULAR REHYDRATION</text>
+
+  <text x="500" y="940" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#000000" text-anchor="middle">ZERO SUGAR · REAL COCONUT WATER · 6 ESSENTIAL ELECTROLYTES</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="npGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#npGrad)"/>
+
+  <!-- Top Badge -->
+  <rect x="320" y="45" width="360" height="38" rx="19" fill="#000000"/>
+  <text x="500" y="69" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">PERFORMANCE TIMING &amp; KINETICS</text>
+
+  <!-- Product Image Center -->
+  <image href="/products/nitropre.png" x="280" y="140" width="440" height="660" preserveAspectRatio="xMidYMid meet" filter="url(#softShadow)"/>
+
+  <!-- Timing Matrix Left -->
+  <g transform="translate(60, 240)">
+    <rect width="250" height="140" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#64748B">TIMING WINDOW</text>
+    <text x="20" y="68" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#000000">20–30 MIN PRE-LIFT</text>
+    <text x="20" y="96" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">Peak plasma caffeine &amp;</text>
+    <text x="20" y="116" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">citrulline blood levels</text>
+  </g>
+
+  <!-- Formula Matrix Right -->
+  <g transform="translate(690, 240)">
+    <rect width="250" height="140" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#64748B">ZERO CRASH SYSTEM</text>
+    <text x="20" y="68" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#000000">L-TYROSINE BUFFER</text>
+    <text x="20" y="96" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">Smooth cognitive focus</text>
+    <text x="20" y="116" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">without post-workout fatigue</text>
+  </g>
+
+  <!-- Nitric Oxide Matrix Left Bottom -->
+  <g transform="translate(60, 620)">
+    <rect width="250" height="130" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="36" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#000000">VASODILATION PUMP</text>
+    <text x="20" y="62" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">4000mg Pure Citrulline</text>
+    <text x="20" y="86" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Massive nutrient delivery &amp; cellular swelling</text>
+  </g>
+
+  <!-- Endurance Matrix Right Bottom -->
+  <g transform="translate(690, 620)">
+    <rect width="250" height="130" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="36" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#000000">LACTATE BUFFER</text>
+    <text x="20" y="62" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">1600mg Beta-Alanine</text>
+    <text x="20" y="86" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Delays muscular fatigue during intense sets</text>
+  </g>
+
+  <text x="500" y="940" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#000000" text-anchor="middle">OMASTRA NITROPRE — FULL LABEL TRANSPARENCY</text>
+</svg>

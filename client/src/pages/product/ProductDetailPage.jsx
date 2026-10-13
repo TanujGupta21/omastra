@@ -125,7 +125,7 @@ export default function ProductDetailPage() {
       {/* Main grid */}
       <div className="grid lg:grid-cols-2 gap-12 mb-16">
         {/* Images */}
-        <ProductImageGallery images={product.images} productName={product.name} />
+        <ProductImageGallery images={product.images} productName={product.name} defaultImage={product.image} />
 
         {/* Details */}
         <div>

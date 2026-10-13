@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="bgGrad3" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EDF2F7"/>
+    </radialGradient>
+    <filter id="softShadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#bgGrad3)"/>
+  <path d="M 0,200 L 1000,200 M 0,400 L 1000,400 M 0,600 L 1000,600 M 0,800 L 1000,800 M 200,0 L 200,1000 M 400,0 L 400,1000 M 600,0 L 600,1000 M 800,0 L 800,1000" stroke="#000000" stroke-width="1" stroke-opacity="0.04"/>
+
+  <!-- Top Pill -->
+  <rect x="340" y="50" width="320" height="36" rx="18" fill="#000000"/>
+  <text x="500" y="73" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">CLEAN MACRO CRUNCH BAR</text>
+
+  <!-- Product Image Center -->
+  <image href="/products/protein-bar.png" x="150" y="320" width="700" height="360" preserveAspectRatio="xMidYMid meet" filter="url(#softShadow3)"/>
+
+  <!-- Callout 1: Top Left -->
+  <g transform="translate(80, 160)">
+    <circle cx="40" cy="40" r="32" fill="#FFFFFF" stroke="#000000" stroke-width="2" filter="url(#softShadow3)"/>
+    <text x="40" y="47" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#000000" text-anchor="middle">20g</text>
+    <text x="88" y="32" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" fill="#000000">CLEAN WHEY ISOLATE</text>
+    <text x="88" y="52" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#64748B">Ultra-Pure Protein Matrix</text>
+    <line x1="240" y1="40" x2="320" y2="180" stroke="#000000" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="320" cy="180" r="4" fill="#000000"/>
+  </g>
+
+  <!-- Callout 2: Bottom Left -->
+  <g transform="translate(80, 720)">
+    <circle cx="40" cy="40" r="32" fill="#FFFFFF" stroke="#000000" stroke-width="2" filter="url(#softShadow3)"/>
+    <text x="40" y="47" font-family="-apple-system, sans-serif" font-size="20" font-weight="900" fill="#000000" text-anchor="middle">3g</text>
+    <text x="88" y="32" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" fill="#000000">NET ACTIVE CARBS</text>
+    <text x="88" y="52" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#64748B">High Prebiotic Tapioca Fiber</text>
+    <line x1="240" y1="40" x2="340" y2="-80" stroke="#000000" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="340" cy="-80" r="4" fill="#000000"/>
+  </g>
+
+  <!-- Callout 3: Top Right -->
+  <g transform="translate(680, 160)">
+    <circle cx="40" cy="40" r="32" fill="#FFFFFF" stroke="#000000" stroke-width="2" filter="url(#softShadow3)"/>
+    <text x="40" y="47" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#000000" text-anchor="middle">0%</text>
+    <text x="88" y="32" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" fill="#000000">ZERO MALTITOL</text>
+    <text x="88" y="52" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#64748B">No Stomach Cramps or Bloat</text>
+    <line x1="-10" y1="40" x2="-80" y2="180" stroke="#000000" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="-80" cy="180" r="4" fill="#000000"/>
+  </g>
+
+  <!-- Callout 4: Bottom Right -->
+  <g transform="translate(680, 720)">
+    <circle cx="40" cy="40" r="32" fill="#FFFFFF" stroke="#000000" stroke-width="2" filter="url(#softShadow3)"/>
+    <text x="40" y="47" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#000000" text-anchor="middle">🍫</text>
+    <text x="88" y="32" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" fill="#000000">REAL DARK CHOCOLATE</text>
+    <text x="88" y="52" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#64748B">Crispy Triple-Layer Texture</text>
+    <line x1="-10" y1="40" x2="-80" y2="-80" stroke="#000000" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="-80" cy="-80" r="4" fill="#000000"/>
+  </g>
+
+  <!-- Bottom Brand Bar -->
+  <text x="500" y="930" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" letter-spacing="4" fill="#000000" text-anchor="middle">OMASTRA PROTEIN CRUNCH — MACRO-FRIENDLY SNACKING</text>
+</svg>

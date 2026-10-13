@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <radialGradient id="btGrad" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </radialGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="1000" height="1000" fill="url(#btGrad)"/>
+
+  <!-- Top Pill -->
+  <rect x="330" y="45" width="340" height="38" rx="19" fill="#000000"/>
+  <text x="500" y="69" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" letter-spacing="3" fill="#FFFFFF" text-anchor="middle">TRIPLE LAYER BAR ARCHITECTURE</text>
+
+  <!-- Product Image Center -->
+  <image href="/products/protein-bar.png" x="280" y="140" width="440" height="660" preserveAspectRatio="xMidYMid meet" filter="url(#softShadow)"/>
+
+  <!-- Layer 1 Left -->
+  <g transform="translate(60, 240)">
+    <rect width="250" height="140" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#64748B">TOP LAYER</text>
+    <text x="20" y="68" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#000000">REAL ROASTED PEANUTS</text>
+    <text x="20" y="96" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">Crunchy peanut pieces &amp;</text>
+    <text x="20" y="116" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">velvety peanut butter ribbon</text>
+  </g>
+
+  <!-- Layer 2 Right -->
+  <g transform="translate(690, 240)">
+    <rect width="250" height="140" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="38" font-family="-apple-system, sans-serif" font-size="11" font-weight="800" letter-spacing="2" fill="#64748B">CORE MATRIX</text>
+    <text x="20" y="68" font-family="-apple-system, sans-serif" font-size="18" font-weight="900" fill="#000000">SOY-FREE WHEY CRISPS</text>
+    <text x="20" y="96" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">20g pure isolate protein base</text>
+    <text x="20" y="116" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#475569">with light, airy satisfying crunch</text>
+  </g>
+
+  <!-- Coating Left Bottom -->
+  <g transform="translate(60, 620)">
+    <rect width="250" height="130" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="36" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#000000">DARK CHOCOLATE COATING</text>
+    <text x="20" y="62" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">Rich Real Cacao Dip</text>
+    <text x="20" y="86" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Natural cacao butter, zero palm oil or cheap fats</text>
+  </g>
+
+  <!-- Fiber Right Bottom -->
+  <g transform="translate(690, 620)">
+    <rect width="250" height="130" rx="16" fill="#FFFFFF" stroke="#000000" stroke-width="1.5" filter="url(#softShadow)"/>
+    <text x="20" y="36" font-family="-apple-system, sans-serif" font-size="14" font-weight="800" fill="#000000">PREBIOTIC CORN FIBER</text>
+    <text x="20" y="62" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B">10g Gut-Friendly Fiber</text>
+    <text x="20" y="86" font-family="-apple-system, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Zero digestive distress, zero chemical alcohols</text>
+  </g>
+
+  <text x="500" y="940" font-family="-apple-system, sans-serif" font-size="13" font-weight="800" letter-spacing="3" fill="#000000" text-anchor="middle">OMASTRA PROTEIN CRUNCH — CHEF-CRAFTED MACRO COMPOSITION</text>
+</svg>
