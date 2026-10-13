@@ -21,7 +21,7 @@ export default function SearchPage() {
     enabled: !!q,
   })
 
-  const products = data?.data || []
+  const products = Array.isArray(data?.data) ? data.data : (Array.isArray(data) ? data : [])
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

@@ -70,7 +70,7 @@ export default function ShopPage() {
     keepPreviousData: true,
   })
 
-  const products   = data?.data || []
+  const products   = Array.isArray(data?.data) ? data.data : (Array.isArray(data) ? data : [])
   const pagination = data?.pagination || {}
 
   return (

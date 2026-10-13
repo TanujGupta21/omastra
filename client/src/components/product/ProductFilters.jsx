@@ -53,7 +53,8 @@ export default function ProductFilters(props) {
   } = props;
 
   const { data: fetchedCategories = [] } = useCategories();
-  const categories = propCategories && propCategories.length > 0 ? propCategories : fetchedCategories;
+  const rawCategories = propCategories && propCategories.length > 0 ? propCategories : fetchedCategories;
+  const categories = Array.isArray(rawCategories) ? rawCategories : [];
 
   const filters = propFilters || {
     category: propCategory || '',

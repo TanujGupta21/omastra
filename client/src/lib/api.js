@@ -16,7 +16,21 @@ const processQueue = (error) => {
 };
 
 api.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    // If an API request receives HTML (e.g. SPA index.html fallback from Vercel when no backend is running),
+    // treat it as 404 so hooks fall back gracefully to default data instead of crashing on HTML string.
+    if (
+      typeof response.data === 'string' &&
+      (response.data.trim().startsWith('<!doctype') ||
+        response.data.trim().startsWith('<!DOCTYPE') ||
+        response.data.trim().startsWith('<html'))
+    ) {
+      const error = new Error('API route returned HTML page (backend route not found)');
+      error.response = { status: 404, data: { message: 'Not found' } };
+      return Promise.reject(error);
+    }
+    return response;
+  },
   async (error) => {
     const original = error.config;
     if (

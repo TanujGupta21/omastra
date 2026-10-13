@@ -75,7 +75,7 @@ export default function MobileNav({ isOpen, onClose, categories = [] }) {
           <div className="py-3 border-b border-gray-100">
             <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Categories</p>
             <div className="space-y-0">
-              {categories.map((cat) => navLink(`/categories/${cat.slug}`, cat.name))}
+              {(Array.isArray(categories) ? categories : []).map((cat) => navLink(`/categories/${cat.slug}`, cat.name))}
             </div>
           </div>
 

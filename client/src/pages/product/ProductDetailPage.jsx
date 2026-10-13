@@ -74,7 +74,7 @@ export default function ProductDetailPage() {
 
   const variant = product.variants?.[selectedVariantIdx]
   const wishlisted = isWishlisted(product._id)
-  const reviews = reviewsData?.data || []
+  const reviews = Array.isArray(reviewsData?.data) ? reviewsData.data : (Array.isArray(reviewsData) ? reviewsData : [])
   const inStock = (variant?.stock || 0) > 0
 
   const handleAddToCart = async () => {

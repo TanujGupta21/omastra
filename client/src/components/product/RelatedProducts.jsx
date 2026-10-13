@@ -4,7 +4,7 @@ import { useRelatedProducts } from '../../hooks/useProducts';
 export default function RelatedProducts({ productSlug, productId }) {
   const slug = productSlug || productId;
   const { data, isLoading } = useRelatedProducts(slug);
-  const products = Array.isArray(data) ? data : data?.products || data?.data || [];
+  const products = Array.isArray(data) ? data : (Array.isArray(data?.products) ? data.products : (Array.isArray(data?.data) ? data.data : []));
 
   if (!isLoading && products.length === 0) return null;
 

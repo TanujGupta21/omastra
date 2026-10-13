@@ -391,7 +391,7 @@ function FeaturedProductsSection() {
         const { data } = await api.get('/api/v1/products', {
           params: { limit: 4, status: 'active' }
         })
-        const items = data.data || []
+        const items = Array.isArray(data?.data) ? data.data : (Array.isArray(data) ? data : [])
         return items.length > 0 ? items.slice(0, 4) : FALLBACK_PRODUCTS
       } catch (err) {
         return FALLBACK_PRODUCTS
@@ -400,7 +400,7 @@ function FeaturedProductsSection() {
     staleTime: 5 * 60 * 1000,
   })
 
-  const products = data && data.length > 0 ? data : FALLBACK_PRODUCTS
+  const products = Array.isArray(data) && data.length > 0 ? data : FALLBACK_PRODUCTS
 
   return (
     <section className="py-20 bg-white border-b border-gray-100">
@@ -427,7 +427,7 @@ function FeaturedProductsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {isLoading
             ? Array.from({ length: 4 }).map((_, i) => <ProductCard key={i} loading />)
-            : products.map((product, i) => (
+            : (Array.isArray(products) ? products : FALLBACK_PRODUCTS).map((product, i) => (
               <Reveal key={product._id || product.id} delay={i * 80} direction="scale">
                 <ProductCard product={product} />
               </Reveal>
