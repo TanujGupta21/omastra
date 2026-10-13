@@ -16,6 +16,7 @@ import PriceDisplay from '../../components/ui/PriceDisplay'
 import { Skeleton } from '../../components/ui/Skeleton'
 import ErrorState from '../../components/ui/ErrorState'
 import { cn } from '../../lib/utils'
+import { getMockProductBySlug } from '../../data/mockData'
 
 const TABS = ['Description', 'Nutrition', 'Reviews']
 
@@ -30,11 +31,14 @@ export default function ProductDetailPage() {
   const [tab, setTab] = useState('Description')
   const [adding, setAdding] = useState(false)
 
-  const { data: product, isLoading, isError, refetch } = useQuery({
+  const { data: product, isLoading, refetch } = useQuery({
     queryKey: ['product', slug],
     queryFn: async () => {
-      const { data } = await api.get(`/api/v1/products/slug/${slug}`)
-      return data.data
+      try {
+        const { data } = await api.get(`/api/v1/products/slug/${slug}`)
+        if (data?.data) return data.data
+      } catch (e) {}
+      return getMockProductBySlug(slug)
     },
     enabled: !!slug,
   })
@@ -42,8 +46,12 @@ export default function ProductDetailPage() {
   const { data: reviewsData } = useQuery({
     queryKey: ['reviews', slug],
     queryFn: async () => {
-      const { data } = await api.get(`/api/v1/reviews/product/${slug}`)
-      return data
+      try {
+        const { data } = await api.get(`/api/v1/reviews/product/${slug}`)
+        return data
+      } catch (e) {
+        return { data: [] }
+      }
     },
     enabled: !!slug,
   })

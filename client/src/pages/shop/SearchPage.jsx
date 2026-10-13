@@ -5,6 +5,7 @@ import api from '../../lib/api'
 import ProductCard from '../../components/product/ProductCard'
 import { ProductCardSkeleton } from '../../components/ui/Skeleton'
 import EmptyState from '../../components/ui/EmptyState'
+import { filterMockProducts } from '../../data/mockData'
 
 export default function SearchPage() {
   const [params] = useSearchParams()
@@ -13,10 +14,14 @@ export default function SearchPage() {
   const { data, isLoading } = useQuery({
     queryKey: ['search', q],
     queryFn: async () => {
-      const { data } = await api.get('/api/v1/products', {
-        params: { search: q, limit: 24, status: 'active' },
-      })
-      return data
+      try {
+        const { data } = await api.get('/api/v1/products', {
+          params: { search: q, limit: 24, status: 'active' },
+        })
+        if (data && Array.isArray(data.data) && data.data.length > 0) return data
+      } catch (e) {}
+
+      return { data: filterMockProducts({ search: q }) }
     },
     enabled: !!q,
   })

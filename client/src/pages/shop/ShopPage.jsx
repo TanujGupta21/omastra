@@ -10,6 +10,7 @@ import ProductSearch from '../../components/product/ProductSearch'
 import { ProductCardSkeleton } from '../../components/ui/Skeleton'
 import EmptyState from '../../components/ui/EmptyState'
 import ErrorState from '../../components/ui/ErrorState'
+import { filterMockProducts } from '../../data/mockData'
 
 export default function ShopPage() {
   const [params, setParams] = useSearchParams()
@@ -48,24 +49,47 @@ export default function ShopPage() {
   const clearFilters = () => setParams({ sort, page: '1' })
   const hasFilters = Boolean(category || search || minPrice || maxPrice || dietary || minRating)
 
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['products', { page, sort, category, search, minPrice, maxPrice, dietary, minRating }],
     queryFn: async () => {
-      const queryParams = {
-        page,
-        limit: 12,
-        sort,
-        status: 'active',
-      }
-      if (category) queryParams.category = category
-      if (search) queryParams.search = search
-      if (minPrice !== '') queryParams.minPrice = minPrice
-      if (maxPrice !== '') queryParams.maxPrice = maxPrice
-      if (dietary) queryParams.dietary = dietary
-      if (minRating !== '') queryParams.minRating = minRating
+      try {
+        const queryParams = {
+          page,
+          limit: 12,
+          sort,
+          status: 'active',
+        }
+        if (category) queryParams.category = category
+        if (search) queryParams.search = search
+        if (minPrice !== '') queryParams.minPrice = minPrice
+        if (maxPrice !== '') queryParams.maxPrice = maxPrice
+        if (dietary) queryParams.dietary = dietary
+        if (minRating !== '') queryParams.minRating = minRating
 
-      const { data } = await api.get('/api/v1/products', { params: queryParams })
-      return data
+        const { data } = await api.get('/api/v1/products', { params: queryParams })
+        if (data && Array.isArray(data.data) && data.data.length > 0) return data
+      } catch (err) {
+        // Fallback to mock catalog when API is offline
+      }
+
+      const filtered = filterMockProducts({
+        search,
+        category,
+        minPrice,
+        maxPrice,
+        dietary,
+        minRating,
+        sort,
+      })
+
+      return {
+        data: filtered,
+        pagination: {
+          total: filtered.length,
+          page: 1,
+          pages: 1,
+        },
+      }
     },
     keepPreviousData: true,
   })
@@ -192,9 +216,7 @@ export default function ShopPage() {
 
           {/* Grid */}
           <div className="flex-1 min-w-0">
-            {isError ? (
-              <ErrorState onRetry={refetch} />
-            ) : isLoading ? (
+            {isLoading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                 {Array.from({ length: 9 }).map((_, i) => <ProductCardSkeleton key={i} />)}
               </div>

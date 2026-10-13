@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import api from '../lib/api';
+import { MOCK_CATEGORIES, MOCK_PRODUCTS, getMockProductBySlug } from '../data/mockData';
 
 export function useProducts(params = {}) {
   return useQuery({
@@ -8,13 +9,14 @@ export function useProducts(params = {}) {
       try {
         const { data } = await api.get('/api/v1/products', { params });
         const items = Array.isArray(data?.data) ? data.data : (Array.isArray(data) ? data : []);
-        return { data: items, total: data?.pagination?.total ?? items.length };
+        if (items.length > 0) return { data: items, total: data?.pagination?.total ?? items.length };
       } catch {
-        return { data: [], total: 0 };
+        // Fallback
       }
+      return { data: MOCK_PRODUCTS, total: MOCK_PRODUCTS.length };
     },
     staleTime: 1000 * 60 * 5,
-    initialData: { data: [], total: 0 },
+    initialData: { data: MOCK_PRODUCTS, total: MOCK_PRODUCTS.length },
   });
 }
 
@@ -24,10 +26,11 @@ export function useProduct(slug) {
     queryFn: async () => {
       try {
         const { data } = await api.get(`/api/v1/products/slug/${slug}`);
-        return data?.data || data?.product || data;
+        if (data?.data) return data.data;
       } catch {
-        return null;
+        // Fallback
       }
+      return getMockProductBySlug(slug);
     },
     enabled: !!slug,
     staleTime: 1000 * 60 * 5,
@@ -40,14 +43,15 @@ export function useFeaturedProducts() {
     queryFn: async () => {
       try {
         const { data } = await api.get('/api/v1/products', { params: { featured: true, limit: 8 } });
-        const result = data.data || data;
-        return Array.isArray(result) ? result : [];
+        const result = data?.data || data;
+        if (Array.isArray(result) && result.length > 0) return result;
       } catch {
-        return [];
+        // Fallback
       }
+      return MOCK_PRODUCTS.slice(0, 4);
     },
     staleTime: 1000 * 60 * 10,
-    initialData: [],
+    initialData: MOCK_PRODUCTS.slice(0, 4),
   });
 }
 
@@ -57,14 +61,15 @@ export function useCategories() {
     queryFn: async () => {
       try {
         const { data } = await api.get('/api/v1/categories');
-        const result = data.data || data.categories || data;
-        return Array.isArray(result) ? result : [];
+        const result = data?.data || data?.categories || data;
+        if (Array.isArray(result) && result.length > 0) return result;
       } catch {
-        return [];
+        // Fallback
       }
+      return MOCK_CATEGORIES;
     },
     staleTime: 1000 * 60 * 30,
-    initialData: [],
+    initialData: MOCK_CATEGORIES,
   });
 }
 

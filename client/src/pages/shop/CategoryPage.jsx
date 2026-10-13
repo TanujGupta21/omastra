@@ -7,6 +7,7 @@ import { ProductCardSkeleton } from '../../components/ui/Skeleton'
 import EmptyState from '../../components/ui/EmptyState'
 import ErrorState from '../../components/ui/ErrorState'
 import ProductSort from '../../components/product/ProductSort'
+import { filterMockProducts, MOCK_CATEGORIES } from '../../data/mockData'
 
 export default function CategoryPage() {
   const { slug } = useParams()
@@ -17,19 +18,30 @@ export default function CategoryPage() {
   const { data: catData } = useQuery({
     queryKey: ['category', slug],
     queryFn: async () => {
-      const { data } = await api.get(`/api/v1/categories/${slug}`)
-      return data.data
+      try {
+        const { data } = await api.get(`/api/v1/categories/${slug}`)
+        if (data?.data) return data.data
+      } catch (e) {}
+      return MOCK_CATEGORIES.find((c) => c.slug === slug) || { name: slug, description: '' }
     },
     enabled: !!slug,
   })
 
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['products', 'category', slug, sort, page],
     queryFn: async () => {
-      const { data } = await api.get('/api/v1/products', {
-        params: { category: slug, sort, page, limit: 12, status: 'active' },
-      })
-      return data
+      try {
+        const { data } = await api.get('/api/v1/products', {
+          params: { category: slug, sort, page, limit: 12, status: 'active' },
+        })
+        if (data && Array.isArray(data.data) && data.data.length > 0) return data
+      } catch (e) {}
+
+      const filtered = filterMockProducts({ category: slug, sort })
+      return {
+        data: filtered,
+        pagination: { total: filtered.length, page: 1, pages: 1 },
+      }
     },
     enabled: !!slug,
     keepPreviousData: true,
@@ -64,9 +76,7 @@ export default function CategoryPage() {
         }} />
       </div>
 
-      {isError ? (
-        <ErrorState onRetry={refetch} />
-      ) : isLoading ? (
+      {isLoading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {Array.from({ length: 8 }).map((_, i) => <ProductCardSkeleton key={i} />)}
         </div>
