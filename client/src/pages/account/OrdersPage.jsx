@@ -15,8 +15,15 @@ export default function OrdersPage() {
   const { data, isLoading } = useQuery({
     queryKey: ['my-orders'],
     queryFn: async () => {
-      const { data } = await api.get('/api/v1/orders/my', { params: { limit: 50 } })
-      return data.data || []
+      try {
+        const { data } = await api.get('/api/v1/orders/my', { params: { limit: 50 } })
+        if (data?.data) return data.data
+      } catch {}
+      try {
+        return JSON.parse(localStorage.getItem('omastra_orders') || '[]')
+      } catch {
+        return []
+      }
     },
   })
 

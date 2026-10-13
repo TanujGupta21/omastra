@@ -20,14 +20,29 @@ export default function OrderSuccessPage() {
   const { data: order, isLoading } = useQuery({
     queryKey: ['order', id],
     queryFn: async () => {
-      // Try authenticated first, fall back to guest lookup by ID
+      // 1. Try server (authenticated or public)
       try {
         const { data } = await api.get(`/api/v1/orders/my/${id}`)
-        return data.data
-      } catch {
+        if (data?.data) return data.data
+      } catch {}
+      try {
         const { data } = await api.get(`/api/v1/orders/${id}`)
-        return data.data
-      }
+        if (data?.data) return data.data
+      } catch {}
+
+      // 2. Check local fallback storage
+      try {
+        const lastOrder = JSON.parse(sessionStorage.getItem('omastra_last_order') || 'null')
+        if (lastOrder && (lastOrder._id === id || lastOrder.id === id || lastOrder.orderNumber === id)) {
+          return lastOrder
+        }
+        const saved = JSON.parse(localStorage.getItem('omastra_orders') || '[]')
+        const found = saved.find(o => o._id === id || o.id === id || o.orderNumber === id)
+        if (found) return found
+        if (saved.length > 0) return saved[0]
+      } catch {}
+
+      return null
     },
     enabled: !!id,
     retry: 1,

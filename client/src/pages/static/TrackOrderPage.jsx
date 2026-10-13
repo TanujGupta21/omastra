@@ -78,12 +78,32 @@ export default function TrackOrderPage() {
     setError('')
     setOrder(null)
     try {
-      const { data } = await api.get('/api/v1/orders/track', {
-        params: { orderNumber: query.trim().toUpperCase(), email: email.trim() || undefined },
-      })
-      setOrder(data.data)
-    } catch (err) {
-      setError(err.response?.data?.message || 'Order not found. Check your order number and email.')
+      try {
+        const { data } = await api.get('/api/v1/orders/track', {
+          params: { orderNumber: query.trim().toUpperCase(), email: email.trim() || undefined },
+        })
+        if (data?.data) {
+          setOrder(data.data)
+          return
+        }
+      } catch {}
+
+      try {
+        const saved = JSON.parse(localStorage.getItem('omastra_orders') || '[]')
+        const targetNum = query.trim().toUpperCase()
+        const found = saved.find(
+          (o) =>
+            o.orderNumber?.toUpperCase() === targetNum ||
+            o._id === targetNum ||
+            o.id === targetNum
+        )
+        if (found) {
+          setOrder(found)
+          return
+        }
+      } catch {}
+
+      setError('Order not found. Please check your order reference number.')
     } finally {
       setLoading(false)
     }

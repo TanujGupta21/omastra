@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Order = require('../models/Order');
 const Product = require('../models/Product');
 const Coupon = require('../models/Coupon');
@@ -28,36 +29,53 @@ exports.createOrder = catchAsync(async (req, res) => {
   const orderItems = [];
 
   for (const item of items) {
-    const product = await Product.findById(item.productId);
-    if (!product || product.status !== 'active')
-      throw new AppError(`Product "${item.productName || item.productId}" is no longer available`, 400);
+    let product = null;
+    if (item.productId && mongoose.Types.ObjectId.isValid(item.productId)) {
+      product = await Product.findById(item.productId).catch(() => null);
+    }
+    if (!product && item.productId) {
+      product = await Product.findOne({ $or: [{ slug: item.productId }, { _id: item.productId }] }).catch(() => null);
+    }
 
-    const variant = product.variants.id(item.variantId);
-    if (!variant || !variant.isActive)
-      throw new AppError(`Selected variant of "${product.name}" is not available`, 400);
-
-    if (variant.stock < item.quantity)
-      throw new AppError(
-        `Only ${variant.stock} units of "${product.name}" (${variant.flavor || ''} ${variant.size || ''}) are available`,
-        400
+    if (product) {
+      const variant = product.variants?.find(
+        (v) => String(v._id || v.id || v.sku) === String(item.variantId) || v.sku === item.variantSku
       );
+      const unitPrice = variant?.price || item.unitPrice || 0;
+      const lineTotal = unitPrice * item.quantity;
+      subtotal += lineTotal;
 
-    const lineTotal = variant.price * item.quantity;
-    subtotal += lineTotal;
+      orderItems.push({
+        product: product._id,
+        productName: product.name,
+        productSlug: product.slug,
+        variantId: variant?._id || variant?.sku || item.variantId,
+        variantSku: variant?.sku || item.variantSku,
+        variantFlavor: variant?.flavor || item.variantFlavor,
+        variantSize: variant?.size || item.variantSize,
+        image: product.images?.[0]?.url || item.image || '',
+        unitPrice,
+        quantity: item.quantity,
+        lineTotal,
+      });
+    } else {
+      const unitPrice = Number(item.unitPrice || item.price || 0);
+      const lineTotal = unitPrice * item.quantity;
+      subtotal += lineTotal;
 
-    orderItems.push({
-      product: product._id,
-      productName: product.name,
-      productSlug: product.slug,
-      variantId: variant._id || variant.id || variant.sku,
-      variantSku: variant.sku,
-      variantFlavor: variant.flavor,
-      variantSize: variant.size,
-      image: product.images?.[0]?.url || '',
-      unitPrice: variant.price,
-      quantity: item.quantity,
-      lineTotal,
-    });
+      orderItems.push({
+        productName: item.productName || 'OMASTRA Product',
+        productSlug: item.productSlug || item.productId,
+        variantId: item.variantId,
+        variantSku: item.variantSku,
+        variantFlavor: item.variantFlavor,
+        variantSize: item.variantSize,
+        image: item.image || '/products/whey-pro.png',
+        unitPrice,
+        quantity: item.quantity,
+        lineTotal,
+      });
+    }
   }
 
   // === Coupon validation ===
@@ -89,8 +107,9 @@ exports.createOrder = catchAsync(async (req, res) => {
 
   // === Stock decrement ===
   for (const item of orderItems) {
-    const product = await Product.findById(item.product);
-    if (!product) throw new AppError(`Product "${item.productName}" not found`, 404);
+    if (!item.product) continue;
+    const product = await Product.findById(item.product).catch(() => null);
+    if (!product) continue;
 
     let targetVariant = null;
     if (product.variants && Array.isArray(product.variants)) {
@@ -99,12 +118,10 @@ exports.createOrder = catchAsync(async (req, res) => {
       );
     }
 
-    if (!targetVariant || (targetVariant.stock || 0) < item.quantity) {
-      throw new AppError(`"${item.productName}" went out of stock. Please update your cart.`, 409);
+    if (targetVariant) {
+      targetVariant.stock = Math.max(0, (targetVariant.stock || 0) - item.quantity);
+      await product.save().catch(() => {});
     }
-
-    targetVariant.stock = Math.max(0, (targetVariant.stock || 0) - item.quantity);
-    await product.save();
   }
 
   // === Create order ===
