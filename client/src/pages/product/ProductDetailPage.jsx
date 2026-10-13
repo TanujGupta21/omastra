@@ -36,7 +36,13 @@ export default function ProductDetailPage() {
     queryFn: async () => {
       try {
         const { data } = await api.get(`/api/v1/products/slug/${slug}`)
-        if (data?.data) return data.data
+        if (data?.data) {
+          const mock = getMockProductBySlug(slug)
+          const images = (Array.isArray(data.data.images) && data.data.images.length > 1)
+            ? data.data.images
+            : (mock?.images || data.data.images || [mock?.image || data.data.image])
+          return { ...data.data, images }
+        }
       } catch (e) {}
       return getMockProductBySlug(slug)
     },

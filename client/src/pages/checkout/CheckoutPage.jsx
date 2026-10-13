@@ -216,6 +216,8 @@ export default function CheckoutPage() {
       await clearCart()
       setCodSuccessOrder(orderResult)
       toast.success('Order placed successfully via Cash on Delivery!')
+      const orderIdToNav = orderResult._id || orderResult.id || orderResult.orderNumber
+      navigate(`/order-success/${orderIdToNav}`, { replace: true })
     } catch (err) {
       toast.error(err.response?.data?.message || err.message || 'Could not place order. Please try again.')
     } finally {

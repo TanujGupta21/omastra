@@ -121,7 +121,7 @@ export const MOCK_PRODUCTS = [
     image: '/products/whey-isolate.png',
     images: [
       { url: '/products/whey-isolate.png', alt: 'OMASTRA Whey Isolate 90 - Front View', label: 'Front' },
-      { url: '/products/whey-isolate-angled.svg', alt: 'OMASTRA Whey Isolate 90 - CFM Purity Specs', label: 'Specs' },
+      { url: '/products/whey-isolate-angled.jpg', alt: 'OMASTRA Whey Isolate 90 - CFM Purity Specs', label: 'Specs' },
       { url: '/products/whey-isolate-infographic.jpg', alt: 'OMASTRA Whey Isolate 90 - Nutrition & Benefits', label: 'Benefits' },
       { url: '/products/whey-isolate-back.jpg', alt: 'OMASTRA Whey Isolate 90 - Supplement Facts Back Panel', label: 'Back' },
       { url: '/products/whey-isolate-lifestyle.jpg', alt: 'OMASTRA Whey Isolate 90 - In-Action Lifestyle', label: 'Lifestyle' },
@@ -164,7 +164,7 @@ export const MOCK_PRODUCTS = [
     image: '/products/creatine.png',
     images: [
       { url: '/products/creatine.png', alt: 'OMASTRA Creatine Monohydrate - Front View', label: 'Front' },
-      { url: '/products/creatine-usage.svg', alt: 'OMASTRA Creatine - Dosing Protocol & Micro-Mesh', label: 'Protocol' },
+      { url: '/products/creatine-usage.jpg', alt: 'OMASTRA Creatine - Dosing Protocol & Micro-Mesh', label: 'Protocol' },
       { url: '/products/creatine-infographic.jpg', alt: 'OMASTRA Creatine - Nutrition & Power Benefits', label: 'Benefits' },
       { url: '/products/creatine-back.jpg', alt: 'OMASTRA Creatine - Supplement Facts Back Panel', label: 'Back' },
       { url: '/products/creatine-lifestyle.jpg', alt: 'OMASTRA Creatine - Dumbbell & Shaker Lifestyle', label: 'Lifestyle' },
@@ -207,7 +207,7 @@ export const MOCK_PRODUCTS = [
     image: '/products/nitropre.png',
     images: [
       { url: '/products/nitropre.png', alt: 'OMASTRA NitroPre Pre-Workout - Front View', label: 'Front' },
-      { url: '/products/nitropre-timing.svg', alt: 'OMASTRA NitroPre - Performance Timing & Kinetics', label: 'Timing' },
+      { url: '/products/nitropre-timing.jpg', alt: 'OMASTRA NitroPre - Performance Timing & Kinetics', label: 'Timing' },
       { url: '/products/nitropre-infographic.jpg', alt: 'OMASTRA NitroPre - Energy & Pump Matrix', label: 'Benefits' },
       { url: '/products/nitropre-back.jpg', alt: 'OMASTRA NitroPre - Supplement Facts Back Panel', label: 'Back' },
       { url: '/products/nitropre-lifestyle.jpg', alt: 'OMASTRA NitroPre - Locker Room Lifestyle', label: 'Lifestyle' },
@@ -250,10 +250,10 @@ export const MOCK_PRODUCTS = [
     image: '/products/plant-fuel.png',
     images: [
       { url: '/products/plant-fuel.png', alt: 'OMASTRA PlantFuel Vegan Protein - Front View', label: 'Front' },
-      { url: '/products/plant-fuel-aminos.svg', alt: 'OMASTRA PlantFuel - Amino Acid Spectrum', label: 'Aminos' },
-      { url: '/products/plant-fuel-infographic.svg', alt: 'OMASTRA PlantFuel - Nutrition & Benefits', label: 'Benefits' },
-      { url: '/products/plant-fuel-back.svg', alt: 'OMASTRA PlantFuel - Nutrition Facts Back Panel', label: 'Back' },
-      { url: '/products/plant-fuel-lifestyle.svg', alt: 'OMASTRA PlantFuel - Daily Smoothie Lifestyle', label: 'Lifestyle' },
+      { url: '/products/plant-fuel-aminos.jpg', alt: 'OMASTRA PlantFuel - Amino Acid Spectrum', label: 'Aminos' },
+      { url: '/products/plant-fuel-infographic.jpg', alt: 'OMASTRA PlantFuel - Nutrition & Benefits', label: 'Benefits' },
+      { url: '/products/plant-fuel-back.jpg', alt: 'OMASTRA PlantFuel - Nutrition Facts Back Panel', label: 'Back' },
+      { url: '/products/plant-fuel-lifestyle.jpg', alt: 'OMASTRA PlantFuel - Daily Smoothie Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'PF-CHOC-1KG', flavor: 'Cacao & Coconut', size: '1 kg', servings: 28, price: 2199, originalPrice: 2599, stock: 70 },
@@ -293,10 +293,10 @@ export const MOCK_PRODUCTS = [
     image: '/products/hydrocharge.png',
     images: [
       { url: '/products/hydrocharge.png', alt: 'OMASTRA HydroCharge Electrolyte - Front View', label: 'Front' },
-      { url: '/products/hydrocharge-hydration.svg', alt: 'OMASTRA HydroCharge - Osmotic Hydration Science', label: 'Hydration' },
-      { url: '/products/hydrocharge-infographic.svg', alt: 'OMASTRA HydroCharge - 6-Electrolyte Balance', label: 'Benefits' },
-      { url: '/products/hydrocharge-back.svg', alt: 'OMASTRA HydroCharge - Supplement Facts Back Panel', label: 'Back' },
-      { url: '/products/hydrocharge-lifestyle.svg', alt: 'OMASTRA HydroCharge - Ice & Citrus Lifestyle', label: 'Lifestyle' },
+      { url: '/products/hydrocharge-hydration.jpg', alt: 'OMASTRA HydroCharge - Osmotic Hydration Science', label: 'Hydration' },
+      { url: '/products/hydrocharge-infographic.jpg', alt: 'OMASTRA HydroCharge - 6-Electrolyte Balance', label: 'Benefits' },
+      { url: '/products/hydrocharge-back.jpg', alt: 'OMASTRA HydroCharge - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/hydrocharge-lifestyle.jpg', alt: 'OMASTRA HydroCharge - Ice & Citrus Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'HC-LEMON-30SERV', flavor: 'Zesty Lemon Lime', size: '30 Servings', servings: 30, price: 899, originalPrice: 1099, stock: 110 },
@@ -336,10 +336,10 @@ export const MOCK_PRODUCTS = [
     image: '/products/protein-bar.png',
     images: [
       { url: '/products/protein-bar.png', alt: 'OMASTRA Protein Crunch Bar - Front View', label: 'Front' },
-      { url: '/products/protein-bar-texture.svg', alt: 'OMASTRA Protein Crunch Bar - Triple Layer Architecture', label: 'Layers' },
-      { url: '/products/protein-bar-infographic.svg', alt: 'OMASTRA Protein Crunch Bar - Nutrition & Macros', label: 'Benefits' },
-      { url: '/products/protein-bar-back.svg', alt: 'OMASTRA Protein Crunch Bar - Nutritional Facts Back Panel', label: 'Back' },
-      { url: '/products/protein-bar-lifestyle.svg', alt: 'OMASTRA Protein Crunch Bar - On-The-Go Lifestyle', label: 'Lifestyle' },
+      { url: '/products/protein-bar-texture.jpg', alt: 'OMASTRA Protein Crunch Bar - Triple Layer Architecture', label: 'Layers' },
+      { url: '/products/protein-bar-infographic.jpg', alt: 'OMASTRA Protein Crunch Bar - Nutrition & Macros', label: 'Benefits' },
+      { url: '/products/protein-bar-back.jpg', alt: 'OMASTRA Protein Crunch Bar - Nutritional Facts Back Panel', label: 'Back' },
+      { url: '/products/protein-bar-lifestyle.jpg', alt: 'OMASTRA Protein Crunch Bar - On-The-Go Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'PB-CHOCPB-12PK', flavor: 'Dark Chocolate Peanut Butter', size: '12 x 60g', servings: 12, price: 1499, originalPrice: 1799, stock: 65 },
@@ -378,10 +378,10 @@ export const MOCK_PRODUCTS = [
     image: '/products/omega-3.png',
     images: [
       { url: '/products/omega-3.png', alt: 'OMASTRA Triple Strength Omega-3 - Front View', label: 'Front' },
-      { url: '/products/omega-3-purity.svg', alt: 'OMASTRA Triple Strength Omega-3 - Molecular Purity Standard', label: 'Purity' },
-      { url: '/products/omega-3-infographic.svg', alt: 'OMASTRA Triple Strength Omega-3 - 550 EPA / 350 DHA High Potency', label: 'Benefits' },
-      { url: '/products/omega-3-back.svg', alt: 'OMASTRA Triple Strength Omega-3 - Supplement Facts Back Panel', label: 'Back' },
-      { url: '/products/omega-3-lifestyle.svg', alt: 'OMASTRA Triple Strength Omega-3 - Golden Softgels Lifestyle', label: 'Lifestyle' },
+      { url: '/products/omega-3-purity.jpg', alt: 'OMASTRA Triple Strength Omega-3 - Molecular Purity Standard', label: 'Purity' },
+      { url: '/products/omega-3-infographic.jpg', alt: 'OMASTRA Triple Strength Omega-3 - 550 EPA / 350 DHA High Potency', label: 'Benefits' },
+      { url: '/products/omega-3-back.jpg', alt: 'OMASTRA Triple Strength Omega-3 - Supplement Facts Back Panel', label: 'Back' },
+      { url: '/products/omega-3-lifestyle.jpg', alt: 'OMASTRA Triple Strength Omega-3 - Golden Softgels Lifestyle', label: 'Lifestyle' },
     ],
     variants: [
       { sku: 'O3-60CAPS', flavor: 'Lemon Coated Softgels', size: '60 Softgels', servings: 60, price: 999, originalPrice: 1299, stock: 120 },
