@@ -24,6 +24,7 @@ export default function Header() {
   const navigate = useNavigate();
   const { user, isAuthenticated, isAdmin, logout } = useAuth();
   const { itemCount } = useCart();
+  const { count: wishlistCount } = useWishlist();
   const { data: rawCategories } = useCategories();
   const categories = Array.isArray(rawCategories) ? rawCategories : [];
   const [scrolled, setScrolled] = useState(false);
